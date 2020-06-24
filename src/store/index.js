@@ -12,18 +12,28 @@ export default new Vuex.Store({
       return state.counter * 2;
     },
     stringCounter(state) {
-      return `${state.counter} Clicks`;
+      return `${state.counter} clicks`;
     },
   },
   mutations: {
-    increment(state) {
-      state.counter += 1;
+    increment(state, payload) {
+      state.counter += payload;
     },
-    decrement(state) {
-      state.counter -= 1;
+    decrement(state, payload) {
+      state.counter -= payload;
     },
   },
   actions: {
+    increment: ({ commit }, payload) => {
+      setTimeout(() => {
+        commit('increment', payload.by);
+      }, payload.timeout);
+    },
+    decrement: ({ commit }, payload) => {
+      setTimeout(() => {
+        commit('decrement', payload.by);
+      }, payload.timeout);
+    },
   },
   modules: {
   },
