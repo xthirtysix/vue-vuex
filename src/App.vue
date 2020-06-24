@@ -1,7 +1,7 @@
 <template>
   <b-container id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
     <h1>Vuex</h1>
+    <hr>
     <app-result :counter="counter"/>
     <app-counter @updated="counter += $event"/>
   </b-container>
@@ -12,11 +12,6 @@ import Counter from './components/Counter.vue';
 import Result from './components/Result.vue';
 
 export default {
-  data() {
-    return {
-      counter: 0,
-    };
-  },
   components: {
     appCounter: Counter,
     appResult: Result,
@@ -31,7 +26,6 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
   margin-top: 60px;
 }

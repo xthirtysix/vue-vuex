@@ -6,8 +6,10 @@
 
 <script>
 export default {
-  props: {
-    counter: Number,
+  computed: {
+    counter() {
+      return this.$store.state.counter;
+    },
   },
 };
 </script>
