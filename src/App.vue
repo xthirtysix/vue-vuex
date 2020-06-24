@@ -2,8 +2,8 @@
   <b-container id="app">
     <h1>Vuex</h1>
     <hr>
-    <app-result :counter="counter"/>
-    <app-counter @updated="counter += $event"/>
+    <app-result/>
+    <app-counter/>
   </b-container>
 </template>
 
