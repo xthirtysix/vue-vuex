@@ -24,6 +24,16 @@ export default new Vuex.Store({
     },
   },
   actions: {
+    increment: ({ commit }) => {
+      setTimeout(() => {
+        commit('increment');
+      }, 500);
+    },
+    decrement: ({ commit }) => {
+      setTimeout(() => {
+        commit('decrement');
+      }, 500);
+    },
   },
   modules: {
   },
