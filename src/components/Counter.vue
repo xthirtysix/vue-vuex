@@ -1,7 +1,7 @@
 <template>
   <div class="buttons">
-    <b-button @click="increment" variant="primary">Increment</b-button>
-    <b-button @click="decrement" variant="info">Decrement</b-button>
+    <b-button @click="increment({by: 100, timeout: 500})" variant="primary">Increment</b-button>
+    <b-button @click="decrement({by: 50, timeout: 500})" variant="info">Decrement</b-button>
   </div>
 </template>
 

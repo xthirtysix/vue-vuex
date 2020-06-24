@@ -12,27 +12,27 @@ export default new Vuex.Store({
       return state.counter * 2;
     },
     stringCounter(state) {
-      return `${state.counter} Clicks`;
+      return `${state.counter} clicks`;
     },
   },
   mutations: {
-    increment(state) {
-      state.counter += 1;
+    increment(state, payload) {
+      state.counter += payload;
     },
-    decrement(state) {
-      state.counter -= 1;
+    decrement(state, payload) {
+      state.counter -= payload;
     },
   },
   actions: {
-    increment: ({ commit }) => {
+    increment: ({ commit }, payload) => {
       setTimeout(() => {
-        commit('increment');
-      }, 500);
+        commit('increment', payload.by);
+      }, payload.timeout);
     },
-    decrement: ({ commit }) => {
+    decrement: ({ commit }, payload) => {
       setTimeout(() => {
-        commit('decrement');
-      }, 500);
+        commit('decrement', payload.by);
+      }, payload.timeout);
     },
   },
   modules: {
